@@ -1,6 +1,7 @@
 ## CRUDApp-using-ServltsandJSP
 # Java Web CRUD Application using servlets and JSP
 
+#### - developed using eclipse ide
 #### - JDBC connection to MySQL server
 #### - JARS - 
       1.) servlet-api
