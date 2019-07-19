@@ -61,8 +61,7 @@ public class StudentDao {
 		}
 		return false;
 	}
-	public static int update(Student e){  
-        int status=0;  
+	public static boolean update(Student e){  
         try{  
             Connection con=StudentDao.getConnection();  
             PreparedStatement ps= con.prepareStatement("update School set Name=?,email=?,dob=?,password=? where username=?");  
@@ -72,26 +71,26 @@ public class StudentDao {
             ps.setString(4,e.getPassword());  
             ps.setInt(5,e.getUsername());  
               
-            status = ps.executeUpdate();  
+            boolean rs = ps.execute();
+	    return rs;  
               
             con.close();  
         }catch(Exception ex){
         	ex.printStackTrace();
         }            
-        return status;  
+        return false;  
     }  
-    public static int delete(int id){  
-        int status=0;  
+    public static boolean delete(int id){    
         try{  
             Connection con=StudentDao.getConnection();  
             PreparedStatement ps=con.prepareStatement("delete from School where id=?");  
             ps.setInt(1,id);  
-            status = ps.executeUpdate();  
-              
+	    boolean rs = ps.execute();
+	    return rs;              
             con.close();  
         }catch(Exception e){
         	e.printStackTrace();
         }            
-        return status;  
+        return false;  
     }  
 }
