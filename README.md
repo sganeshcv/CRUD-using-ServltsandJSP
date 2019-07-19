@@ -3,7 +3,7 @@
 
 #### - developed using eclipse ide
 #### - JDBC connection to MySQL server
-#### - JARS - 
+#### - JARS :- 
       1.) servlet-api
       2.) hsqldb
       3.) my-sql-connector-java
